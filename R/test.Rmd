@@ -1,0 +1,39 @@
+---
+title: "test"
+author: "Heru Handika & Jacob A. Esselstyn"
+date: "2024-02-07"
+output: html_document
+---
+
+
+```{r}
+devtools::load_all(".")
+
+library(rextendr)
+
+is_dna("AGTC")
+
+is_dna("ttehet")
+
+```
+
+```{r}
+
+code <- r"(
+use segul::helper::alphabet;
+
+#[extendr]
+fn alphabet() -> String {
+    alphabet::DNA_STR_UPPERCASE.to_string()
+}
+)"
+
+rust_source(code = code, dependencies = list(segul = "*"))
+
+alphabet()
+```
+
+
+```{r}
+```
+

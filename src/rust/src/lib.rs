@@ -1,10 +1,12 @@
 use extendr_api::prelude::*;
 
+use segul::helper::alphabet;
+
 /// Return string `"Hello world!"` to R.
 /// @export
 #[extendr]
-fn hello_world() -> &'static str {
-    "Hello world!"
+fn is_dna(string: &str) -> bool {
+  alphabet::is_valid_dna(string)
 }
 
 // Macro to generate exports.
@@ -12,5 +14,5 @@ fn hello_world() -> &'static str {
 // See corresponding C code in `entrypoint.c`.
 extendr_module! {
     mod rsegul;
-    fn hello_world;
+    fn is_dna;
 }
