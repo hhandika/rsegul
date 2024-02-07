@@ -15,6 +15,8 @@ is_dna("AGTC")
 
 is_dna("ttehet")
 
+rust_sitrep()
+
 ```
 
 ```{r}
